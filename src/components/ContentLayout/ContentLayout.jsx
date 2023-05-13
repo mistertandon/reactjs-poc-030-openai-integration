@@ -1,6 +1,6 @@
-import "./ContentSection.scss";
+import "./ContentLayout.scss";
 
-const ContentSection = ({ content }) => {
+const ContentLayout = ({ content }) => {
   return (
     <div>
       {content.map((item, index) => {
@@ -10,4 +10,4 @@ const ContentSection = ({ content }) => {
   );
 };
 
-export default ContentSection;
+export default ContentLayout;
