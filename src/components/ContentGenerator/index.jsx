@@ -1,2 +1,3 @@
 import ContentGenerator from "./ContentGenerator";
-export { ContentGenerator };
+import { redefinedPromptRequest } from "./ContentGenerator.prompts";
+export { ContentGenerator, redefinedPromptRequest };

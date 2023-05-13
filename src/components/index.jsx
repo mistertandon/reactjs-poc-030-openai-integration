@@ -1,2 +1,5 @@
 import { ContentGenerator } from "./ContentGenerator";
-export { ContentGenerator };
+import { ContentSection } from "./ContentSection";
+import { SeoKeywords } from "./SeoKeywords";
+import { RenderImage } from "./RenderImage";
+export { ContentGenerator, ContentSection, SeoKeywords, RenderImage };
