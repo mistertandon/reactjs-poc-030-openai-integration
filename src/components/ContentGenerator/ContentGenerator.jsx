@@ -1,21 +1,7 @@
 import { useForm } from "react-hook-form";
 
 // const { Configuration, OpenAIApi } = require("openai");
-
-// const configuration = new Configuration({
-//   apiKey: process.env.OPENAI_API_KEY,
-// });
-// const openai = new OpenAIApi(configuration);
-
-// const response = await openai.createCompletion({
-//   model: "text-davinci-003",
-//   prompt: "",
-//   temperature: 0.7,
-//   max_tokens: 256,
-//   top_p: 1,
-//   frequency_penalty: 0,
-//   presence_penalty: 0,
-// });
+import { Configuration, OpenAIApi } from "openai";
 
 const ContentGenerator = () => {
   const {
@@ -28,6 +14,43 @@ const ContentGenerator = () => {
   const onSubmit = async (data) => {
     console.log(data);
     const { ai_prompt } = data;
+
+    const userPrompt = `Could you please modify prompt "${ai_prompt}" 
+    and provide a new highly efficient prompt that would help you to get 
+    the requested job done? Kindly keep in mind, new prompt will use by 
+    content developer in order to complete professional work.
+    You can analyze and find out the target industry,
+    then you can add various options so that new prompt
+    is in accordance to serve relevant industry`;
+
+    const configuration = new Configuration({
+      apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+    });
+    const openai = new OpenAIApi(configuration);
+
+    const refinedPromptRequest = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: userPrompt,
+      temperature: 0.8,
+      max_tokens: 256,
+      top_p: 1,
+    });
+
+    const refinedPrompt = refinedPromptRequest.data.choices[0].text;
+
+    const userQueryRequest = await openai.createCompletion({
+      model: "text-davinci-003",
+      prompt: refinedPrompt,
+      temperature: 0.8,
+      max_tokens: 256,
+      top_p: 1,
+    });
+    const queryResult = userQueryRequest.data.choices[0].text;
+
+    console.log(`ai_prompt: ${ai_prompt}`);
+    console.log(`refinedPrompt: ${refinedPrompt}`);
+    console.log(`queryResult: ${queryResult}`);
+
   };
 
   return (
