@@ -64,8 +64,8 @@
   .blog-container {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-column-gap: 1/2rem;
-    grid-row-gap: 1/2rem;
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem
   }
 }
 
@@ -73,8 +73,8 @@
     .blog-container {
 
         grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 1/4rem;
-        grid-row-gap: 1/4rem;
+        grid-column-gap: 0.25rem;
+        grid-row-gap: 0.25rem;
     
         .form--container {
           grid-column-start: 1;
