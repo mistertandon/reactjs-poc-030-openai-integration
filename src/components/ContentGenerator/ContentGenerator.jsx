@@ -128,25 +128,25 @@ const ContentGenerator = () => {
   };
 
   return (
-    <article>
-      <section>
+    <article className="blog-container">
+      <section className="form--container">
         <PromptForm submitHandler={onSubmit} />
       </section>
 
       {contentLayout.length > 0 && (
-        <section>
+        <section className="page-layout--container">
           <ContentLayout outline={outline} contentLayout={contentLayout} />
         </section>
       )}
 
       {seoKeywordsState.length > 0 && (
-        <section>
+        <section className="seo-keywords--container">
           <SeoKeywords keywords={seoKeywordsState} />
         </section>
       )}
 
       {image1024 && (
-        <section>
+        <section className="page-image--container">
           <RenderImage url={image1024} />
         </section>
       )}
