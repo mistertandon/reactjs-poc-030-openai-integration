@@ -4,9 +4,12 @@ import { ContentView } from "./../";
 const SeoKeywords = ({ keywords }) => {
   return (
     <>
-      SeoKeywords
       {keywords.map((keyword) => {
-        return <ContentView key={useId()} content={keyword} />;
+        return (
+          <div className="seo-keyword--container">
+            <ContentView key={useId()} content={keyword} />
+          </div>
+        );
       })}
     </>
   );

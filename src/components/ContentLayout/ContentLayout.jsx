@@ -10,7 +10,9 @@ const ContentLayout = ({ outline, contentLayout }) => {
       </section>
       <section className="page-content-section--container">
         {contentLayout.map((items) => (
-          <ContentSection key={useId()} sectionContent={items} delay={20} />
+          <div className="page-content-view--container">
+            <ContentSection key={useId()} sectionContent={items} delay={20} />
+          </div>
         ))}
       </section>
     </>

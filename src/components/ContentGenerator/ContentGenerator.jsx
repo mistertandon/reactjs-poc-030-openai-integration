@@ -1,9 +1,7 @@
 import { useState } from "react";
-// import { useForm } from "react-hook-form";
-
-// const { Configuration, OpenAIApi } = require("openai");
 import { Configuration, OpenAIApi } from "openai";
 import { PromptForm, SeoKeywords, ContentLayout, RenderImage } from "./../";
+import "./ContentGenerator.scss";
 
 const configuration = new Configuration({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,

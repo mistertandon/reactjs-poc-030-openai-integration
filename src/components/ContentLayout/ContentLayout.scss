@@ -1,0 +1,23 @@
+.page-layout--container {
+  .page-outline--container {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+  .page-content-section--container {
+    grid-column-start: 4;
+    grid-column-end: -1;
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .page-layout--container {
+    .page-outline--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+    .page-content-section--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+}
