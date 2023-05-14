@@ -1,10 +1,20 @@
 import "./ContentLayout.scss";
-
-const ContentLayout = ({ content }) => {
+import { Outline } from "./../";
+import { ContentSection } from "./../ContentSection";
+const ContentLayout = ({ outline, contentLayout }) => {
   return (
     <div>
-      {content.map((item, index) => {
-        return <p key={`item-${index}`}>{item}</p>;
+      <Outline outline={outline} />
+      {contentLayout.map((items, index) => {
+        return (
+          <>
+            <ContentSection
+              key={`item-${index}`}
+              sectionContent={items}
+              delay={20}
+            />
+          </>
+        );
       })}
     </div>
   );

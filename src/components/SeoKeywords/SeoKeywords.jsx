@@ -2,9 +2,10 @@ import "./SeoKeywords.scss";
 const SeoKeywords = ({ keywords }) => {
   return (
     <>
-      {keywords.map((keyword, index) => {
+    SeoKeywords
+      {/* {keywords.map((keyword, index) => {
         return <p key={`keyword-${index}`}>{keyword}</p>;
-      })}
+      })} */}
     </>
   );
 };

@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 
 // const { Configuration, OpenAIApi } = require("openai");
 import { Configuration, OpenAIApi } from "openai";
-import { ContentSection, SeoKeywords, RenderImage } from "./../";
+import { SeoKeywords, ContentLayout, RenderImage } from "./../";
 
 const configuration = new Configuration({
   apiKey: import.meta.env.VITE_OPENAI_API_KEY,
@@ -11,6 +11,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const ContentGenerator = () => {
+  const [outline, setOutline] = useState([]);
   const [contentLayout, setContentLayout] = useState([]);
   const [seoKeywordsState, setSeoKeywordsState] = useState([]);
   const [image1024, setImage1024] = useState("");
@@ -50,9 +51,10 @@ const ContentGenerator = () => {
 
     // const refinedPrompt = refinedPromptRequest.data.choices[0].text;
 
-    let refinedPromptRaw =
+    let refinedPrompt =
       "\nWhat are the best features of the Samsung Galaxy M33 5G?";
-    let refinedPromptRawSanitized = refinedPromptRaw.replace("\n", "");
+
+    // let refinedPromptSanitized = refinedPrompt.replace("\n", "");
 
     // const userQueryRequest = await openai.createCompletion({
     //   model: "text-davinci-003",
@@ -64,9 +66,10 @@ const ContentGenerator = () => {
     // });
     // const userQueryResult = userQueryRequest.data.choices[0].text;
 
-    let userQueryResultRaw =
+    let userQueryResult =
       "\n\nOutline\nI. Overview\nII. Design\nIII. Camera\nIV. Performance\nV. Battery\n\nI. Overview \nThe Samsung Galaxy M33 5G is a budget-friendly 5G phone with a broad range of features. It has a 6.5-inch HD+ Infinity-V display, an octa-core processor, 6GB RAM, 128GB internal storage, a 5000 mAh battery and a quad-camera setup.\n\nII. Design\nThe Samsung Galaxy M33 5G has a sleek and modern design. It comes with a 6.5-inch HD+ Infinity-V display and a waterdrop notch. The phone is constructed with a plastic body with a glossy finish and a textured rear panel. It has a side-mounted fingerprint scanner and a 3.5mm headphone jack. \n\nIII. Camera\nThe Samsung Galaxy M33 5G has a quad-camera setup on the rear, featuring a 48MP primary lens, an 8MP ultra-wide lens, a 2MP macro lens, and a 2MP depth sensor. It has a 13MP selfie camera. The cameras are capable of capturing stunning photos and videos.\n\nIV. Performance\nThe Samsung Galaxy M33 5";
-    let userQueryResultSections = userQueryResultRaw.split("\n\n");
+
+    let userQueryResultSections = userQueryResult.split("\n\n");
 
     console.log(`userQueryResultSections:`, userQueryResultSections);
     let contentSections = [];
@@ -83,7 +86,8 @@ const ContentGenerator = () => {
       // console.log("====================================");
     }
     console.log(contentSections);
-    setContentLayout(contentSections);
+    setOutline(...contentSections.slice(0, 1));
+    setContentLayout(contentSections.slice(1));
 
     // const keywordExtractPrompt = `Could you please analyze below bog heading an content and
     //  suggest SEO keywords?
@@ -100,7 +104,8 @@ const ContentGenerator = () => {
     //   max_tokens: 256,
     //   top_p: 1,
     // });
-    // const keywordExtractorResult = keywordExtractorRequest.data.choices[0].text;
+    // const keywordExtractorResult =
+    //   keywordExtractorRequest.data.choices[0].text.split(",");
 
     const keywordExtractorResult =
       "\nMango shake recipe,delicious mango shake,special occasion shake,gathering ingredients,preparing the shake,enjoying the shake,mangoes,yogurt,ice,milk,honey,cardamom,vanilla extract,rose water,pulse blender,special touch,glass,ground cardamom,mango cubes,garnish.".split(
@@ -166,10 +171,12 @@ const ContentGenerator = () => {
         </form>
       </section>
       <section>
-        {contentLayout.length > 0 &&
-          contentLayout.map((content, index) => {
-            return <ContentSection key={index} content={content} />;
-          })}
+        {contentLayout.length > 0 && (
+          <ContentLayout
+            outline={outline}
+            contentLayout={contentLayout}
+          />
+        )}
       </section>
       <section>
         {seoKeywordsState.length > 0 && (
