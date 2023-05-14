@@ -1,11 +1,13 @@
+import { useId } from "react";
 import "./SeoKeywords.scss";
+import { ContentView } from "./../";
 const SeoKeywords = ({ keywords }) => {
   return (
     <>
-    SeoKeywords
-      {/* {keywords.map((keyword, index) => {
-        return <p key={`keyword-${index}`}>{keyword}</p>;
-      })} */}
+      SeoKeywords
+      {keywords.map((keyword) => {
+        return <ContentView key={useId()} content={keyword} />;
+      })}
     </>
   );
 };

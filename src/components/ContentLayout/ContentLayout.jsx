@@ -1,3 +1,4 @@
+import { useId } from "react";
 import "./ContentLayout.scss";
 import { Outline } from "./../";
 import { ContentSection } from "./../ContentSection";
@@ -5,17 +6,9 @@ const ContentLayout = ({ outline, contentLayout }) => {
   return (
     <div>
       <Outline outline={outline} />
-      {contentLayout.map((items, index) => {
-        return (
-          <>
-            <ContentSection
-              key={`item-${index}xd`}
-              sectionContent={items}
-              delay={20}
-            />
-          </>
-        );
-      })}
+      {contentLayout.map((items) => (
+        <ContentSection key={useId()} sectionContent={items} delay={20} />
+      ))}
     </div>
   );
 };
