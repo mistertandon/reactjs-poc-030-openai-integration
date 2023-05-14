@@ -1,5 +1,6 @@
 import { ContentGenerator } from "./ContentGenerator";
 import { SeoKeywords } from "./SeoKeywords";
+import { PromptForm } from "./PromptForm";
 import { ContentLayout } from "./ContentLayout";
 import { Outline } from "./Outline";
 import { ContentSection } from "./ContentSection";
@@ -9,6 +10,7 @@ import { RenderImage } from "./RenderImage";
 export {
   ContentGenerator,
   SeoKeywords,
+  PromptForm,
   ContentLayout,
   Outline,
   ContentSection,

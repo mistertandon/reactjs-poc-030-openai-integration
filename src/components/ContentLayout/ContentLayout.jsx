@@ -9,7 +9,7 @@ const ContentLayout = ({ outline, contentLayout }) => {
         return (
           <>
             <ContentSection
-              key={`item-${index}`}
+              key={`item-${index}xd`}
               sectionContent={items}
               delay={20}
             />
