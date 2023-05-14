@@ -11,17 +11,17 @@ const PromptForm = ({ submitHandler }) => {
 
   return (
     <>
-      <form onSubmit={handleSubmit(submitHandler)}>
-        <div className="form-field--container">
+      <form onSubmit={handleSubmit(submitHandler)} className="form__form--container">
+        <div className="form-field__user_prompt--container">
           <label
             htmlFor="form-field--user_prompt"
-            className="form-field__input--label"
+            className="user_prompt--label"
           >
-            What you are thinking to solve, let me know
+            Create a blog post using your idea.
           </label>
           <input
             id="form-field--user_prompt"
-            className="form-field__input"
+            className="user_prompt__input"
             {...register("user_prompt", {
               validate: {
                 shouldNotEmpty: (value) => {
@@ -40,7 +40,7 @@ const PromptForm = ({ submitHandler }) => {
           )}
         </div>
 
-        <div className="form-field--container">
+        <div className="form-field__submit--container">
           <input type="submit" className="form-field__button--submit" />
         </div>
       </form>
