@@ -6,7 +6,11 @@ const Outline = ({ outline = "" }) => {
   return (
     <>
       {outline.map((item) => {
-        return <ContentView key={useId()} content={item} />;
+        return (
+          <div className="page-outline-view--container">
+            <ContentView key={useId()} content={item} />
+          </div>
+        );
       })}
     </>
   );

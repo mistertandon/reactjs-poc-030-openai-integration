@@ -7,7 +7,11 @@ const ContentSection = ({ sectionContent }) => {
   return (
     <>
       {sectionContent.map((content) => {
-        return <ContentView key={useId()} content={content} />;
+        return (
+          <div key={useId()} className="page-content-view--container">
+            <ContentView content={content} />
+          </div>
+        );
       })}
     </>
   );
