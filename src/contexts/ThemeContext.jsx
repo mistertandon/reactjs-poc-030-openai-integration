@@ -10,33 +10,33 @@ export const ThemeProvider = ({ children }) => {
       case "dark":
         document.documentElement.style.setProperty(
           "--theme-background-color-primary",
-          "#ffffff"
+          "#000000"
         );
         document.documentElement.style.setProperty(
           "--theme-background-color-secondary",
           "#f3f4f6"
         );
-        document.documentElement.style.setProperty(
+        document.documentElement.style.setProperty( // opacity
           "--theme-background-color-input",
-          "#99a1b3"
+          "#78839B"
         );
-        document.documentElement.style.setProperty(
+        document.documentElement.style.setProperty( // opacity - 0.8
           "--theme-background-color-on-hover",
-          "#087ea4"
+          "#343A46"
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-heading",
-          "#087ea4"
+          "#149ECA"
         );
-        document.documentElement.style.setProperty(
+        document.documentElement.style.setProperty( // opacity
           "--theme-font-color-sub-heading",
-          "#5e687e"
+          "#2ABAEA"
         );
-        document.documentElement.style.setProperty(
+        document.documentElement.style.setProperty( // opacity
           "--theme-font-color-text",
-          "#23272f"
+          "#149ECA"
         );
-        document.documentElement.style.setProperty("--theme-border", "#e5e7eb");
+        document.documentElement.style.setProperty("--theme-border", "#149ECA");
         break;
       case "light":
         document.documentElement.style.setProperty(
