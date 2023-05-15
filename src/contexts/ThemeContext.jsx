@@ -1,8 +1,19 @@
 import React, { useState, createContext, useEffect } from "react";
+import { MoonOutline } from "react-ionicons";
+import { SunnyOutline } from "react-ionicons";
 
 export const ThemeContext = createContext({});
 
 export const ThemeProvider = ({ children }) => {
+  const [activeThemeIcon, setActiveThemeIcon] = useState(
+    <SunnyOutline
+      className="theme-switcher__icon--light"
+      color={"#00000"}
+      title={"Light"}
+      height="20px"
+      width="20px"
+    />
+  );
   const [theme, setTheme] = useState("light");
 
   useEffect(() => {
@@ -16,23 +27,27 @@ export const ThemeProvider = ({ children }) => {
           "--theme-background-color-secondary",
           "#f3f4f6"
         );
-        document.documentElement.style.setProperty( // opacity
+        document.documentElement.style.setProperty(
+          // opacity
           "--theme-background-color-input",
           "#78839B"
         );
-        document.documentElement.style.setProperty( // opacity - 0.8
+        document.documentElement.style.setProperty(
+          // opacity - 0.8
           "--theme-background-color-on-hover",
           "#343A46"
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-heading",
-          "#149ECA"
+          "#99A1B3"
         );
-        document.documentElement.style.setProperty( // opacity
+        document.documentElement.style.setProperty(
+          // opacity
           "--theme-font-color-sub-heading",
-          "#2ABAEA"
+          "#99A1B3"
         );
-        document.documentElement.style.setProperty( // opacity
+        document.documentElement.style.setProperty(
+          // opacity
           "--theme-font-color-text",
           "#ffffff"
         );
@@ -57,11 +72,11 @@ export const ThemeProvider = ({ children }) => {
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-heading",
-          "#087ea4"
+          "#5E687E"
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-sub-heading",
-          "#5e687e"
+          "#5E687E"
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-text",
@@ -71,12 +86,35 @@ export const ThemeProvider = ({ children }) => {
         break;
     }
   }, [theme]);
+
+  useEffect(() => {
+    const icon =
+      theme === "dark" ? (
+        <MoonOutline
+          className="theme-switcher__icon--dark"
+          color={"#00000"}
+          title={"Dark"}
+          height="20px"
+          width="20px"
+        />
+      ) : (
+        <SunnyOutline
+          className="theme-switcher__icon--light"
+          color={"#00000"}
+          title={"Light"}
+          height="20px"
+          width="20px"
+        />
+      );
+    setActiveThemeIcon(icon);
+  }, [theme]);
+
   const switchTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
   return (
-    <ThemeContext.Provider value={{ theme, switchTheme }}>
+    <ThemeContext.Provider value={{ theme, switchTheme, activeThemeIcon }}>
       {children}
     </ThemeContext.Provider>
   );

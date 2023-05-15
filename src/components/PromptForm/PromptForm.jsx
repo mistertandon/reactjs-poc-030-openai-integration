@@ -21,6 +21,7 @@ const PromptForm = ({ submitHandler }) => {
           </label>
           <input
             id="form-field--user_prompt"
+            placeholder={"Enter your idea"}
             className="user_prompt__input"
             {...register("user_prompt", {
               validate: {
