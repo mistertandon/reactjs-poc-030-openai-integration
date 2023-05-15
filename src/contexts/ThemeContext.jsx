@@ -64,7 +64,7 @@ export const ThemeProvider = ({ children }) => {
         );
         document.documentElement.style.setProperty(
           "--theme-background-color-on-hover",
-          "#087ea4"
+          "#e5e7eb"
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-heading",

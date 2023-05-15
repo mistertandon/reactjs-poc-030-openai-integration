@@ -29,3 +29,91 @@
     }
   }
 }
+
+@media (min-width: 992px) and (max-width: 1200px) {
+  .image--container {
+    max-width: 100%;
+    object-fit: cover;
+    @include width-limits(600px, 600px, 600px);
+    @include height-limits(200px, 200px, 200px);
+    margin-bottom: 2rem;
+
+    overflow: hidden;
+
+    .image--image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  .image--container {
+    max-width: 100%;
+    object-fit: cover;
+    @include width-limits(600px, 600px, 600px);
+    @include height-limits(200px, 200px, 200px);
+    margin-bottom: 2rem;
+
+    overflow: hidden;
+
+    .image--image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 768px) {
+  .image--container {
+    max-width: 100%;
+    object-fit: cover;
+    @include width-limits(576px, 576px, 576px);
+    @include height-limits(200px, 200px, 200px);
+    margin-bottom: 2rem;
+
+    overflow: hidden;
+
+    .image--image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .image--container {
+    max-width: 100%;
+    object-fit: cover;
+    @include width-limits(370px, 370px, 370px);
+    @include height-limits(180px, 180px, 180px);
+    margin-bottom: 2rem;
+
+    overflow: hidden;
+
+    .image--image {
+      width: 100%;
+      height: auto;
+      transition: transform 0.3s ease-in-out;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
