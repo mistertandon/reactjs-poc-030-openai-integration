@@ -11,8 +11,22 @@
     line-height: 1.5rem;
     padding: 4px 4px 4px 8px;
 
-    border: 1px solid #C7C7C7;
+    border: 1px solid #c7c7c7;
     border-radius: 0.75rem;
+
+    display: flex;
+    flex-direction: row;
+    column-gap: 0.25rem;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .seo-keyword__icon {
+    align-self: center;
+    display: flex;
+    align-items: center;
+  }
+  .seo-keyword__label {
   }
 }
 

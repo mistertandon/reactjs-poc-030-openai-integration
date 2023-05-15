@@ -30,6 +30,11 @@
   .seo-keywords--container {
     grid-column-start: 2;
     grid-column-end: -2;
+
+    border-top: 2px solid #C7C7C7;
+    border-bottom: 2px solid #C7C7C7;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
   }
 
   .page-image--container {
