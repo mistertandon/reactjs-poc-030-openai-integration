@@ -44,13 +44,26 @@
     }
   }
 
-  .page-content-view__heading{
+  .page-content-view__heading {
     font-weight: 600;
     color: var(--theme-font-color-heading);
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
+  .page-layout--container {
+    .page-outline--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+    .page-content-section--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+}
+
+@media (max-width: 576px) {
   .page-layout--container {
     .page-outline--container {
       grid-column-start: 1;
