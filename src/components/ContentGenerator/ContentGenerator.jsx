@@ -158,7 +158,11 @@ const ContentGenerator = () => {
 
       {!loadingStatus && contentLayout.length > 0 && (
         <section className="page-layout--container">
-          <ContentLayout outline={outline} contentLayout={contentLayout} />
+          <ContentLayout
+            outline={outline}
+            contentLayout={contentLayout}
+            heading={heading}
+          />
         </section>
       )}
 

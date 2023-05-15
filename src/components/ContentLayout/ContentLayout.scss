@@ -43,6 +43,11 @@
       border-bottom: none;
     }
   }
+
+  .page-content-view__heading{
+    font-weight: 600;
+    color: var(--theme-font-color-heading);
+  }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {

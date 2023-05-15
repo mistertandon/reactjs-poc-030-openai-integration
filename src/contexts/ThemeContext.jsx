@@ -28,12 +28,10 @@ export const ThemeProvider = ({ children }) => {
           "#f3f4f6"
         );
         document.documentElement.style.setProperty(
-          // opacity
           "--theme-background-color-input",
           "#78839B"
         );
         document.documentElement.style.setProperty(
-          // opacity - 0.8
           "--theme-background-color-on-hover",
           "#343A46"
         );
@@ -42,12 +40,10 @@ export const ThemeProvider = ({ children }) => {
           "#99A1B3"
         );
         document.documentElement.style.setProperty(
-          // opacity
           "--theme-font-color-sub-heading",
           "#99A1B3"
         );
         document.documentElement.style.setProperty(
-          // opacity
           "--theme-font-color-text",
           "#ffffff"
         );
