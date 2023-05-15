@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import {
+  Loader,
   Header,
   PromptForm,
   SeoKeywords,
   ContentLayout,
   RenderImage,
-  Footer,
+  ErrorFallback,
 } from "./../";
 import "./ContentGenerator.scss";
 
@@ -28,6 +29,7 @@ const ContentGenerator = () => {
     console.log(data);
     const { user_prompt } = data;
     try {
+      // throw new Error("Error");
       setErrorFlagStatus(false);
       setLoadingStatus(true);
       setHeading("");
@@ -147,21 +149,13 @@ const ContentGenerator = () => {
 
       {errorFlagStatus && (
         <section className="error--container">
-          <div className="error__message">
-            An error has occureed, kindly try after some time
-          </div>
+          <ErrorFallback />
         </section>
       )}
 
       {loadingStatus && (
         <section className="loader--container">
-          <div className="loader">
-            <div className="loader__heading">
-              Blog post is getting generated for topic
-            </div>
-            <div className="loader__heading">{`${heading}`}</div>
-          </div>
-          ;
+          <Loader heading={heading} />
         </section>
       )}
 

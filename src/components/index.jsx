@@ -1,3 +1,5 @@
+import { Loader } from "./Loader";
+import { ErrorFallback } from "./ErrorFallback";
 import { Header } from "./Header";
 import { StickyHeader } from "./StickyHeader";
 import { ContentGenerator } from "./ContentGenerator";
@@ -11,6 +13,8 @@ import { RenderImage } from "./RenderImage";
 import { Footer } from "./Footer";
 
 export {
+  ErrorFallback,
+  Loader,
   Header,
   StickyHeader,
   ContentGenerator,
