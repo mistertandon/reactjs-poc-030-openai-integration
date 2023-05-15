@@ -17,7 +17,7 @@ const PromptForm = ({ submitHandler }) => {
             htmlFor="form-field--user_prompt"
             className="user_prompt--label"
           >
-            Create a blog post using your idea.
+            Create a blog post using your idea
           </label>
           <input
             id="form-field--user_prompt"

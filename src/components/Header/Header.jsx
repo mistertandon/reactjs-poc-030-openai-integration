@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <>
       <div className="header-heading">
-        Revolutionizing Content Creation: AI-Powered Blog Generation
+        AI-Powered Blog Generation
       </div>
 
       <StickyHeader
