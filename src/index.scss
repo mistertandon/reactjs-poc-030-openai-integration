@@ -4,10 +4,11 @@
   --theme-background-color-primary: #ffffff;
   --theme-background-color-secondary: #f3f4f6;
   --theme-background-color-input: #99a1b3;
-  --theme-background-color-on-hover: #087ea4;
+  --theme-background-color-on-hover: #80DBF9;
   --theme-font-color-heading: #087ea4;
   --theme-font-color-sub-heading: #5e687e;
   --theme-font-color-text: #23272f;
+  --theme-border: #e5e7eb;
   --theme-error: #dc3545;
   --theme-success: #198754;
   --theme-warning: #fd7e14;
@@ -105,7 +106,8 @@ video {
   vertical-align: baseline;
   box-sizing: border-box;
   word-wrap: break-word;
-  color: #1f2328;
+  color: var(--theme-font-color-text);
+  background-color: var(--theme-background-color-primary);
 }
 /* HTML5 display-role reset for older browsers */
 article,

@@ -34,9 +34,9 @@ export const ThemeProvider = ({ children }) => {
         );
         document.documentElement.style.setProperty( // opacity
           "--theme-font-color-text",
-          "#149ECA"
+          "#ffffff"
         );
-        document.documentElement.style.setProperty("--theme-border", "#149ECA");
+        document.documentElement.style.setProperty("--theme-border", "#595959");
         break;
       case "light":
         document.documentElement.style.setProperty(
@@ -65,7 +65,7 @@ export const ThemeProvider = ({ children }) => {
         );
         document.documentElement.style.setProperty(
           "--theme-font-color-text",
-          "#23272f"
+          "#23272F"
         );
         document.documentElement.style.setProperty("--theme-border", "#e5e7eb");
         break;

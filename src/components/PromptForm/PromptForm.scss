@@ -16,6 +16,7 @@
   }
 
   .user_prompt--label {
+    color: var(--theme-font-color-heading);
     width: 100%;
     text-align: center;
 
@@ -26,7 +27,7 @@
     width: 100%;
     outline: none;
 
-    border: 1px solid #c7c7c7;
+    border: 1px solid var(--theme-border);
     border-radius: 1rem;
     height: 2rem;
 
@@ -43,7 +44,7 @@
   }
 
   .form-field__button--submit {
-    border: 1px solid #c7c7c7;
+    border: 1px solid var(--theme-border);
     border-radius: 1rem;
     height: 2rem;
 

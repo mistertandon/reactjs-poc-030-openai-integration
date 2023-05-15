@@ -1,20 +1,35 @@
 .blog-container {
   max-width: 1440px;
+  //   min-height: 100vh;
   margin: 2rem auto auto;
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
 
+  .header--container {
+    grid-column-start: 2;
+    grid-column-end: -2;
+
+    display: flex;
+    justify-content: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+
+    position: relative;
+  }
+
   .form--container {
     grid-column-start: 3;
     grid-column-end: -3;
 
-    // background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
     background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
     backdrop-filter: blur(
       10px
-    ); /* this is what creates the frosted glass effect */
+    );
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* optional, a subtle shadow can enhance the effect */
     padding: 20px;
   }
@@ -33,8 +48,8 @@
     grid-column-start: 2;
     grid-column-end: -2;
 
-    border-top: 2px solid #c7c7c7;
-    border-bottom: 2px solid #c7c7c7;
+    border-top: 2px solid var(--theme-border);
+    border-bottom: 2px solid var(--theme-border);
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -49,8 +64,9 @@
   }
 
   .footer--container {
-    grid-column-start: 1;
-    grid-column-end: -1;
+    grid-column-start: 2;
+    grid-column-end: -2;
+    background-color: var(--theme-background-color-secondary);
 
     display: flex;
     justify-content: center;

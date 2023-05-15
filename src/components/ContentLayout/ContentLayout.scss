@@ -7,7 +7,7 @@
     flex-direction: column;
     grid-row-gap: 0.5rem;
 
-    border-right: 4px solid #c7c7c7;
+    border-right: 4px solid var(--theme-border);
   }
 
   .page-outline-view--container {
@@ -15,12 +15,12 @@
     font-size: 1.25rem;
     line-height: 1.8rem;
 
-    border-left: 2px solid #c7c7c7;
+    border-left: 2px solid var(--theme-border);
     overflow: hidden;
     text-overflow: ellipsis;
 
     &:hover {
-      background-color: #d0d7de52;
+      background-color: var(--theme-background-color-on-hover);
     }
   }
 
@@ -34,7 +34,7 @@
   }
 
   .page-content-view--container {
-    border-bottom: 2px solid #c7c7c7;
+    border-bottom: 2px solid var(--theme-border);
     padding-bottom: 0.5rem;
     padding-left: 0.5rem;
     padding-right: 0.5rem;

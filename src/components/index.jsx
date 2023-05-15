@@ -1,3 +1,5 @@
+import { Header } from "./Header";
+import { StickyHeader } from "./StickyHeader";
 import { ContentGenerator } from "./ContentGenerator";
 import { SeoKeywords } from "./SeoKeywords";
 import { PromptForm } from "./PromptForm";
@@ -9,6 +11,8 @@ import { RenderImage } from "./RenderImage";
 import { Footer } from "./Footer";
 
 export {
+  Header,
+  StickyHeader,
   ContentGenerator,
   SeoKeywords,
   PromptForm,

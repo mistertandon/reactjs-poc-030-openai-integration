@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
 import {
+  Header,
   PromptForm,
   SeoKeywords,
   ContentLayout,
@@ -133,6 +134,9 @@ const ContentGenerator = () => {
 
   return (
     <article className="blog-container">
+      <section className="header--container">
+        <Header />
+      </section>
       <section className="form--container">
         <PromptForm submitHandler={onSubmit} />
       </section>
@@ -154,9 +158,9 @@ const ContentGenerator = () => {
           <RenderImage url={image1024} />
         </section>
       )}
-      <footer className="footer--container">
+      {/* <footer className="footer--container">
         <Footer />
-      </footer>
+      </footer> */}
     </article>
   );
 };
