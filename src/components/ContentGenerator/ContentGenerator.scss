@@ -7,6 +7,23 @@
   grid-column-gap: 1rem;
   grid-row-gap: 1rem;
 
+  .error--container {
+    grid-column-start: 3;
+    grid-column-end: -3;
+    min-height: 200px;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+
+    .error__message {
+      color: var(--theme-font-color-heading);
+    }
+  }
+
   .loader--container {
     grid-column-start: 3;
     grid-column-end: -3;
@@ -20,7 +37,7 @@
     font-weight: 500;
 
     .loader__heading {
-        color: var(--theme-font-color-heading);
+      color: var(--theme-font-color-heading);
     }
   }
 
