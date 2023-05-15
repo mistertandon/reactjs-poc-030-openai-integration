@@ -29,7 +29,6 @@ const ContentGenerator = () => {
     console.log(data);
     const { user_prompt } = data;
     try {
-      // throw new Error("Error");
       setErrorFlagStatus(false);
       setLoadingStatus(true);
       setHeading("");
@@ -57,9 +56,6 @@ const ContentGenerator = () => {
 
       const refinedPrompt = refinedPromptRequest.data.choices[0].text;
 
-      // let refinedPrompt =
-      //   "\nWhat are the best features of the Samsung Galaxy M33 5G?";
-
       let refinedPromptSanitized = refinedPrompt.replace("\n", "");
       setHeading(refinedPromptSanitized);
 
@@ -72,9 +68,6 @@ const ContentGenerator = () => {
         top_p: 1,
       });
       const userQueryResult = userQueryRequest.data.choices[0].text;
-
-      // let userQueryResult =
-      //   "\n\nOutline\nI. Overview\nII. Design\nIII. Camera\nIV. Performance\nV. Battery\n\nI. Overview \nThe Samsung Galaxy M33 5G is a budget-friendly 5G phone with a broad range of features. It has a 6.5-inch HD+ Infinity-V display, an octa-core processor, 6GB RAM, 128GB internal storage, a 5000 mAh battery and a quad-camera setup.\n\nII. Design\nThe Samsung Galaxy M33 5G has a sleek and modern design. It comes with a 6.5-inch HD+ Infinity-V display and a waterdrop notch. The phone is constructed with a plastic body with a glossy finish and a textured rear panel. It has a side-mounted fingerprint scanner and a 3.5mm headphone jack. \n\nIII. Camera\nThe Samsung Galaxy M33 5G has a quad-camera setup on the rear, featuring a 48MP primary lens, an 8MP ultra-wide lens, a 2MP macro lens, and a 2MP depth sensor. It has a 13MP selfie camera. The cameras are capable of capturing stunning photos and videos.\n\nIV. Performance\nThe Samsung Galaxy M33 5";
 
       let userQueryResultSections = userQueryResult.split("\n\n");
 
@@ -111,13 +104,7 @@ const ContentGenerator = () => {
       const keywordExtractorResult =
         keywordExtractorRequest.data.choices[0].text.split(",");
 
-      // const keywordExtractorResult =
-      //   "\nMango shake recipe,delicious mango shake,special occasion shake,gathering ingredients,preparing the shake,enjoying the shake,mangoes,yogurt,ice,milk,honey,cardamom,vanilla extract,rose water,pulse blender,special touch,glass,ground cardamom,mango cubes,garnish.".split(
-      //     ","
-      //   );
-
       setSeoKeywordsState(keywordExtractorResult);
-      // console.log(keywordExtractorResult);
 
       const imageRequest = await openai.createImage({
         prompt: keywordExtractorRequest.data.choices[0].text,
@@ -125,9 +112,6 @@ const ContentGenerator = () => {
         size: "1024x1024",
       });
       const imageUrl = imageRequest.data.data[0].url;
-
-      // const imageUrl =
-      //   "https://oaidalleapiprodscus.blob.core.windows.net/private/org-oG9uKVT09GWfZ7AobgC4GgIL/user-eVIKSrl21l3c2BFCwx6QIVpZ/img-vVtnPpCMfTznSqbFlnpS4CFd.png?st=2023-05-13T15%3A49%3A48Z&se=2023-05-13T17%3A49%3A48Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-05-12T20%3A37%3A53Z&ske=2023-05-13T20%3A37%3A53Z&sks=b&skv=2021-08-06&sig=YXIxIBnwn/gUfQa7L19ABF5RoksMJJOlmhH11o4YpmQ%3D";
 
       setImage1024(imageUrl);
     } catch (error) {
