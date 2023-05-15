@@ -16,7 +16,7 @@ const configuration = new Configuration({
 const openai = new OpenAIApi(configuration);
 
 const ContentGenerator = () => {
-  const [loadingStatus, setLoadingStatus] = useState(true);
+  const [loadingStatus, setLoadingStatus] = useState(false);
   const [heading, setHeading] = useState("");
   const [outline, setOutline] = useState([]);
   const [contentLayout, setContentLayout] = useState([]);
