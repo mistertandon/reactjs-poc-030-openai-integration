@@ -1,6 +1,12 @@
 import { useState } from "react";
 import { Configuration, OpenAIApi } from "openai";
-import { PromptForm, SeoKeywords, ContentLayout, RenderImage } from "./../";
+import {
+  PromptForm,
+  SeoKeywords,
+  ContentLayout,
+  RenderImage,
+  Footer,
+} from "./../";
 import "./ContentGenerator.scss";
 
 const configuration = new Configuration({
@@ -148,6 +154,9 @@ const ContentGenerator = () => {
           <RenderImage url={image1024} />
         </section>
       )}
+      <footer className="footer--container">
+        <Footer />
+      </footer>
     </article>
   );
 };

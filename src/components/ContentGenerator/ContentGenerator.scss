@@ -12,7 +12,9 @@
 
     // background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
     background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
-    backdrop-filter: blur(10px); /* this is what creates the frosted glass effect */
+    backdrop-filter: blur(
+      10px
+    ); /* this is what creates the frosted glass effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* optional, a subtle shadow can enhance the effect */
     padding: 20px;
   }
@@ -31,8 +33,8 @@
     grid-column-start: 2;
     grid-column-end: -2;
 
-    border-top: 2px solid #C7C7C7;
-    border-bottom: 2px solid #C7C7C7;
+    border-top: 2px solid #c7c7c7;
+    border-bottom: 2px solid #c7c7c7;
     padding-top: 1rem;
     padding-bottom: 1rem;
   }
@@ -44,6 +46,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  .footer--container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+
+    display: flex;
+    justify-content: center;
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    font-weight: 500;
   }
 }
 
@@ -76,40 +89,39 @@
     display: grid;
     grid-template-columns: repeat(12, 1fr);
     grid-column-gap: 0.5rem;
-    grid-row-gap: 0.5rem
+    grid-row-gap: 0.5rem;
   }
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-    .blog-container {
+  .blog-container {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 0.25rem;
+    grid-row-gap: 0.25rem;
 
-        grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 0.25rem;
-        grid-row-gap: 0.25rem;
-    
-        .form--container {
-          grid-column-start: 1;
-          grid-column-end: -1;
-        }
-    
-        .page-layout--container {
-          grid-column-start: 1;
-          grid-column-end: -1;
-    
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          grid-column-gap: 1rem;
-          grid-row-gap: 1rem;
-        }
-    
-        .seo-keywords--container {
-          grid-column-start: 1;
-          grid-column-end: -1;
-        }
-    
-        .page-image--container {
-          grid-column-start: 1;
-          grid-column-end: -1;
-        }
-      }
+    .form--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+
+    .page-layout--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 1rem;
+      grid-row-gap: 1rem;
+    }
+
+    .seo-keywords--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+
+    .page-image--container {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
 }

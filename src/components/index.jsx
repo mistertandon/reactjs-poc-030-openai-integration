@@ -6,6 +6,7 @@ import { Outline } from "./Outline";
 import { ContentSection } from "./ContentSection";
 import { ContentView } from "./ContentView";
 import { RenderImage } from "./RenderImage";
+import { Footer } from "./Footer";
 
 export {
   ContentGenerator,
@@ -16,4 +17,5 @@ export {
   ContentSection,
   ContentView,
   RenderImage,
+  Footer,
 };
