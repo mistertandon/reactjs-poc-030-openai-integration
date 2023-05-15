@@ -10,6 +10,7 @@
     grid-column-start: 3;
     grid-column-end: -3;
 
+    // background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
     background: rgba(255, 255, 255, 0.1); /* semi-transparent white */
     backdrop-filter: blur(10px); /* this is what creates the frosted glass effect */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* optional, a subtle shadow can enhance the effect */

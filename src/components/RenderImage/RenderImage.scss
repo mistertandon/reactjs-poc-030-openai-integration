@@ -1,0 +1,31 @@
+@mixin width-limits($basis, $min, $max) {
+  width: $basis;
+  min-width: $min;
+  max-width: $max;
+}
+
+@mixin height-limits($basis, $min, $max) {
+  height: $basis;
+  min-height: $min;
+  max-height: $max;
+}
+
+.image--container {
+  width: 100%;
+  object-fit: cover;
+  @include width-limits(600px, 600px, 600px);
+  @include height-limits(200px, 200px, 200px);
+  margin-bottom: 2rem;
+
+  overflow: hidden;
+
+  .image--image {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

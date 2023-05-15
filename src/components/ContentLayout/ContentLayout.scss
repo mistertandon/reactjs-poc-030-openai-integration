@@ -15,7 +15,13 @@
     font-size: 1.25rem;
     line-height: 1.8rem;
 
-    border-left: 2px solid #C7C7C7;
+    border-left: 2px solid #c7c7c7;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    &:hover {
+      background-color: #d0d7de52;
+    }
   }
 
   .page-content-section--container {

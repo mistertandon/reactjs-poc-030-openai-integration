@@ -109,7 +109,7 @@ const ContentGenerator = () => {
     // const imageRequest = await openai.createImage({
     //   prompt: `${keywordExtractorResult}`,
     //   n: 1,
-    //   size: "1024x1024",
+    //   size: "600x200",
     // });
     // const imageUrl = imageRequest.data.data[0].url;
 
